@@ -1,0 +1,101 @@
+@use "../../../assets/scss/" as *;
+
+
+.background-slider {
+    padding-top: 45%;
+
+    background-size: cover;
+    background-image: url('https://image.tmdb.org/t/p/original/f7UI3dYpr7ZUHGo0iIr1Qvy1VPe.jpg');
+}
+
+.color-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: -1px;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+
+}
+
+.color-bottom-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    right: -1px;
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+.info-background {
+
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+
+    .box-info {
+        width: 40%;
+
+        .info {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                color: $hover-text-header;
+                font-size: 60px;
+            }
+
+            ;
+
+            p {
+                color: #f0f0f0;
+                font-size: 16px;
+                margin-top: 32px;
+                font-weight: 500;
+            }
+
+            ;
+
+            .button-slider {
+                margin-top: 32px;
+
+                button {
+                    margin-right: 15px;
+                    border: 2px solid $hover-text-header ;
+                    border-radius: 20px;
+                    padding: 10px 0;
+                    background-color: $hover-text-header;
+                    transition: .5s ease;
+
+                    a { display: flex;
+                        align-items: center;
+                        color: #1a1a1e;
+                        font-size: 14px;
+                        padding: 5px 34px;
+                        text-decoration: none;
+                        font-weight: 700;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        touch-action: manipulation;
+                        transition: all 0.3s ease 0s;
+                        vertical-align: middle;
+                        white-space: nowrap;
+                    }
+
+                    &:hover {
+                        background: transparent;
+                        border: 2px solid $hover-text-header;
+                        box-shadow: 0 0 10px $hover-text-header inset, 0 0 10px 4px $hover-text-header;
+                        border-radius: 20px;
+
+                        a {
+                            color: #f0f0f0;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+@use "../../assets/scss/" as *;
+
+/*Header*/
+.header-main {
+    width: 100%;
+    height: auto;
+    // background: $background-header;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    z-index: 9;
+    height: auto;  
+}
+
+.custom-container {
+    max-width: 1420px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.menu-nav {
+    @include flex (center, flex-start);
+    flex-wrap: wrap;
+
+    .main-menu {
+        display: flex;
+        flex-grow: 1;
+
+        .navigation {
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-left: 200px;
+            margin-right: 200px;
+
+            a {
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #f0f0f0;
+                padding: 38px 23px;
+                display: block;
+                line-height: 1;
+                position: relative;
+                z-index: 1;
+
+                &:hover {
+                    color: $hover-text-header;
+                }
+            }
+        }
+    }
+
+    ;
+
+    .action-menu {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+
+            .header-search {
+                margin-left: 0px;
+
+                a {
+                    padding-right: 10px;
+                    color: #f0f0f0;
+                    font-weight: 900;
+                }
+            }
+
+            ;
+
+            .header-lang {
+                position: relative;
+                padding-left: 15px;
+                margin-left: 15px;
+
+                &::before {
+                    content: "|";
+                    position: absolute;
+                    left: -1px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: #fff;
+                    opacity: .12;
+                }
+
+                form {
+                    display: flex;
+                    align-items: center;
+
+                    .icon {
+                        font-size: 18px;
+                        margin-right: 6px;
+                        color: $hover-text-header;
+                    }
+
+                    ;
+
+                    .lang-dropdown {
+                        background: transparent;
+                        border: none;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        outline: none;
+
+                        option {
+                            color: #1a1a1e;
+
+                        }
+                    }
+                }
+            }
+
+            ;
+
+            .header-btn {
+                margin-left: 30px;
+                border: 2px solid $hover-text-header ;
+                border-radius: 20px;
+                padding: 10px 0;
+
+                a {
+                    color: #fff;
+                    font-size: 14px;
+                    padding: 10px 34px;
+                    text-decoration: none;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-align: center;
+                    text-transform: uppercase;
+                    touch-action: manipulation;
+                    transition: all 0.3s ease 0s;
+                    vertical-align: middle;
+                    white-space: nowrap;
+                }
+
+                &:hover {
+                    background-color: $hover-text-header;
+
+                    a {
+                        color: #1a1a1e;
+                    }
+
+                }
+            }
+        }
+    }
+}
