@@ -10,7 +10,24 @@
 }
 
 
-body{
-    font-family: $font-family;
-    background-color: #000;
+body {
+    font-family: $font-family !important;
+    background-color: #000 !important;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 700;
 }

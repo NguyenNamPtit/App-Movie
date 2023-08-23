@@ -1,0 +1,33 @@
+@use "../../assets/scss/" as *;
+
+.upcomming-movie{
+    padding: 120px 0 20px;
+    
+}
+.our-services{
+    background-image: url('../../../public/image/background-ourservices.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0;
+}
+.top-rated-movie{
+    background-position: top center;
+    background-size: cover;
+    padding: 120px 0 60px;
+}
+.live-area{
+    background-image: url('../../../public/image/live-area-background.jpg');
+    background-position: left center;
+    background-size: cover;
+    padding: 120px 0 120px;
+}
+.tv-series-area{
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0 70px;
+}
+.newsletter-area{
+    background-image: url('../../../public/image/newsletter_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}

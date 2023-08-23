@@ -1,0 +1,121 @@
+@use "../../../assets/scss/" as *;
+
+
+.main-movie {
+    .swiper-slide {
+        margin-bottom: 50px;
+    }
+
+    .custom-main-movie {
+        max-width: 1330px;
+        margin: auto;
+
+        .title-section {
+            position: relative;
+            max-width: 1366px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 120%;
+                height: 5px;
+                width: 100px;
+                background-color: $hover-text-header;
+            }
+
+            h1 {
+                color: #f0f0f0;
+                font-size: 36px;
+                font-weight: 900;
+                margin-bottom: 55px
+            }
+        }
+
+        ;
+
+        .movie-item {
+            position: relative;
+            background-size: cover;
+            background-position: center center;
+            background-color: darkgrey;
+            background-image: url(https://image.tmdb.org/t/p/w500/6oH378KUfCEitzJkm07r97L0RsZ.jpg);
+            padding-top: 160%;
+            color: rgb(255, 255, 255);
+            border-radius: 4px;
+
+            .background-color-movie {
+                transition: all 0.3s ease 0s;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+                opacity: 0;
+
+
+
+            }
+
+            ;
+
+            .btn-movie-item {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 64px;
+                padding: 6px 16px;
+                border-radius: 4px;
+                background-color: rgb(255, 0, 0);
+                border: 1px solid rgb(255, 0, 0);
+                color: rgb(255, 255, 255);
+                transform: translate(-50%, -50%);
+                transition: all 0.3s ease 0s;
+                opacity: 0;
+
+                &:hover {
+                    background-color: rgb(178, 0, 0);
+                    border: 1px solid rgb(178, 0, 0);
+                }
+
+            }
+
+            &:hover .btn-movie-item {
+                opacity: 1;
+            }
+
+            &:hover .background-color-movie {
+                opacity: 1;
+            }
+
+            .info-movie-item {
+                opacity: 0;
+                bottom: -20px;
+                padding: 2rem 1rem;
+                transition: all 0.3s ease 0s;
+                position: absolute;
+                width: 100%;
+                height: max-content;
+                box-sizing: border-box;
+
+                .box-info-item {
+                    display: flex;
+                    flex-direction: column;
+
+                    p {
+                        margin: 16px 0px 0px;
+                    }
+                }
+            }
+
+            &:hover .info-movie-item {
+                opacity: 1;
+                bottom: 0px;
+            }
+        }
+    }
+
+
+}
