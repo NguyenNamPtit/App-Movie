@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/home/Home";
-import Movie from "./pages/Movie";
-import TvShow from "./pages/TvShow";
+import Movie from "./pages/movie/Movie";
+import TvShow from "./pages/tvshow/TvShow";
 import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
+import Contact from "./pages/contact/Contact";
 import NoPage from "./pages/NoPage";
 import './App.scss';
 

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { Link } from 'react-router-dom';
 /* import scss*/
 import "../livearea/LiveArea.scss";
 
@@ -28,7 +29,7 @@ const LiveArea = () => {
                         </div>
                         
                     </div>
-                    <a href='' className='btn-live-movie'><PlayArrowIcon/> Watch Now</a>
+                    <Link to='' className='btn-live-movie'><PlayArrowIcon/> Watch Now</Link>
                 </div>
             </Col>
             <Col xl={7}>

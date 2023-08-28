@@ -13,9 +13,9 @@ const Header = () => {
             <div className='menu-wrap'>
               <div className='menu-nav show'>
                 <div className='logo-header'>
-                  <a href=''>
+                  <Link to=''>
                     <img src='../../public/image/logo-header.png' />
-                  </a>
+                  </Link>
                 </div>
                 <div className='main-menu'>
                   <ul className='navigation'>
@@ -39,9 +39,9 @@ const Header = () => {
                 <div className='action-menu'>
                   <ul>
                     <li className='header-search'>
-                        <a href='/'>
+                        <Link to='/'>
                           <SearchIcon/>
-                        </a>
+                        </Link>
                     </li>
                     <li className='header-lang'>
                       <form action='/#'>
@@ -57,7 +57,7 @@ const Header = () => {
                       </form>
                     </li>
                     <li className='header-btn'>
-                      <a href=''>SIGN IN</a>
+                      <Link to=''>SIGN IN</Link>
                     </li>
                   </ul>
                 </div>

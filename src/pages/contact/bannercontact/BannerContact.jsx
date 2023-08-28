@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Movie = () => {
+const BannerContact = () => {
   return (
     <div>
-      Movie
+      
     </div>
   );
 }
 
-export default Movie;
+export default BannerContact;

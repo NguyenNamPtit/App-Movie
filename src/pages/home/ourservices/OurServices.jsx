@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import "../ourservices/OurServices.scss";
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import PhotoCameraFrontIcon from '@mui/icons-material/PhotoCameraFront';
+import { Link } from 'react-router-dom';
 const OurServices = () => {
   return (
     <Container>
@@ -10,10 +11,10 @@ const OurServices = () => {
         <Col lg={6}>
             <div className='services-img-wrap'>
                 <img src='../../../public/image/services_img.jpg'/>
-                <a href='' className='download-btn'>
+                <Link to='' className='download-btn'>
                     Download
                     <img src="../../../public/image/download-btn.svg" alt="" />
-                </a>
+                </Link>
             </div>
         </Col>
         <Col lg={6}>

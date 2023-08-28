@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import '../upcommingmovie/UpcommingMovie.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { Link } from 'react-router-dom';
 import "../topratedmovie/TopRatedMovie.scss";
 const TopRatedMovie = () => {
   return (
@@ -23,7 +24,7 @@ const TopRatedMovie = () => {
                     className='swiper-slide'
                 >
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -38,10 +39,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -56,10 +57,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -74,10 +75,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -92,10 +93,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -110,10 +111,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -128,10 +129,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -146,10 +147,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -164,7 +165,7 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     
 
@@ -177,7 +178,7 @@ const TopRatedMovie = () => {
                     className='swiper-slide'
                 >
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -192,10 +193,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -210,10 +211,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -228,10 +229,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -246,10 +247,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -264,10 +265,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -282,10 +283,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -300,10 +301,10 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <a href=''>
+                        <Link to=''>
                             <div className='movie-item'>
                                 <div className='background-color-movie'></div>
                                 <button className='btn-movie-item'>
@@ -318,7 +319,7 @@ const TopRatedMovie = () => {
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </SwiperSlide>
                     
 
