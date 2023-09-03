@@ -3,7 +3,7 @@ import Layout from "./pages/Layout";
 import Home from "./pages/home/Home";
 import Movie from "./pages/movie/Movie";
 import TvShow from "./pages/tvshow/TvShow";
-import Blog from "./pages/Blog";
+import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import NoPage from "./pages/NoPage";
 import './App.scss';

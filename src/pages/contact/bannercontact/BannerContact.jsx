@@ -18,7 +18,7 @@ const BannerContact = () => {
                                 <Link to='/'>HOMEONE</Link>
                             </li>
                             <li className='breadcrumb-item-activity'>
-                                Movie
+                                Contact
                             </li>
                         </ol>
                     </nav>

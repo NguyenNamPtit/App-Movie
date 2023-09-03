@@ -1,16 +1,17 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-/* import scss */
-import '../bannertvshow/BannerTvShow.scss';
-const BannerTvShow = () => {
+
+/*import scss*/
+import '../bannerblog/BannerBlog.scss';
+const BannerBlog = () => {
   return (
     <Container>
         <Row>
             <Col lg={12}>
                 <div className='banner-content'>
                     <h2 className='banner-title'>
-                        Tv <span>Show</span>
+                        News <span>Update</span>
                     </h2>
                     <nav className='breadcrumb-box'>
                         <ol className='breadcrumb'>
@@ -18,7 +19,7 @@ const BannerTvShow = () => {
                                 <Link to='/'>HOMEONE</Link>
                             </li>
                             <li className='breadcrumb-item-activity'>
-                                Tv Show
+                                Blog Page
                             </li>
                         </ol>
                     </nav>
@@ -29,4 +30,4 @@ const BannerTvShow = () => {
   );
 }
 
-export default BannerTvShow;
+export default BannerBlog;
