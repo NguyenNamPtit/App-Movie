@@ -1,6 +1,7 @@
 import React from 'react';
 import BannerBlog from './bannerblog/BannerBlog';
 import BlogArea from './blogarea/BlogArea';
+import NewsletterArea from '../home/newsletterarea/NewsletterArea';
 /*import scss*/
 import '../blog/Blog.scss';
 
@@ -12,6 +13,9 @@ const Blog = () => {
       </section>
       <section className='blog-area'>
         <BlogArea/>
+      </section>
+      <section className='news-letter-area'>
+        <NewsletterArea/>
       </section>
     </div>
   );
