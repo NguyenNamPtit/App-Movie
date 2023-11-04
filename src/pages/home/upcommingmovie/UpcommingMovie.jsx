@@ -18,8 +18,6 @@ const UpcommingMovie = () => {
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={4}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
                     className='swiper-slide'
                 >
                     <SwiperSlide>
@@ -172,8 +170,6 @@ const UpcommingMovie = () => {
                 <Swiper
                     spaceBetween={50}
                     slidesPerView={4}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
                     className='swiper-slide'
                 >
                     <SwiperSlide>

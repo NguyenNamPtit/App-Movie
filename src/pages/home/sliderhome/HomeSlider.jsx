@@ -11,8 +11,6 @@ const HomeSlider = () => {
             <Swiper
                 spaceBetween={50}
                 slidesPerView={1}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
             >
                 <SwiperSlide className='swiper-slider'>
                     <div className='background-slider'></div>

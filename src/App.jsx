@@ -7,7 +7,6 @@ import Blog from "./pages/blog/Blog";
 import Contact from "./pages/contact/Contact";
 import NoPage from "./pages/NoPage";
 import './App.scss';
-import { useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
@@ -16,19 +15,13 @@ import { useQuery } from "@tanstack/react-query";
 function App() {
 
    // Queries
-   
-
-  // useEffect(() =>{
-  //   fetchApi()
-  // },[])
-
-  const fetchApi = async () =>{
-    const res = await axios.get(`http://localhost:3000/api/film/get-all`)
-    // console.log('res',res)
-    return res.data
-  }
-  const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
-  console.log('query',query)
+  // const fetchApi = async () =>{
+  //   const res = await axios.get(`http://localhost:3000/api/film/get-all`)
+  //   return res.data
+  // }
+  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchApi })
+  // console.log('query',query)
+  
   return (
     <BrowserRouter>
       <Routes>
