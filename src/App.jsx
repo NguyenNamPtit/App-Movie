@@ -23,7 +23,7 @@ function App() {
   // console.log('query',query)
   
   return (
-    <BrowserRouter>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout/>}>
           {/*Dành cho Users*/}

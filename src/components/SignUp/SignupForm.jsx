@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useMutation } from '@tanstack/react-query';
 //import component 
 import SigninForm from '../SignIn/SigninForm';
-
+import * as UserServices from '../../services/UserServices'
 //import scss
 import '../SignUp/SignupForm.scss'
+
 
     //showsignin
 const SignupForm = () => {
@@ -20,12 +22,30 @@ const SignupForm = () => {
     const [password, setPassword] = useState('');
     const {register, handleSubmit, formState: { errors},} = useForm({
       defaultValues:{
-        username: "",
+        name: "",
         email: "",
         password:"",
         confirmPassword:"",
       },
-    });
+    }); 
+
+    const mutation = useMutation({
+      mutationFn: data => UserServices.signupUser(data)
+    })
+    console.log('mutation',mutation)
+
+    const handleSignUp = (data) => {
+      const {name, email, password , confirmPassword} = data;
+      mutation.mutate({
+        name,
+        email,
+        password,
+        confirmPassword,
+      })
+    }
+
+
+
     const onSubmit = (data) =>{
       console.log(data);
     }
@@ -38,7 +58,7 @@ const SignupForm = () => {
       <form action="" onSubmit={handleSubmit(onSubmit)}>
         <div className='signin-input'>
             <div className='input-username'>
-                <input type="text" placeholder='User Name' {...register('username', {required: true})}/>
+                <input type="text" placeholder='User Name' {...register('name', {required: true})}/>
             </div>
             {errors.username && <span className='error' >This field is required</span>}
             <div className='input-password'>
@@ -56,7 +76,7 @@ const SignupForm = () => {
             {errors.confirmPassword && errors.confirmPassword.type === 'required' && <span className='error'>This field is required</span>}
             {errors.confirmPassword && errors.confirmPassword.type === 'validate' && <span className='error'>Passwords do not match</span>}
         </div>
-        <button type='submit' className='btn-signin'>SIGN UP</button>
+        <button type='submit' className='btn-signin' onClick={handleSubmit(handleSignUp)}>SIGN UP</button>
         <div className='btn-signup' onClick={toggleLoginForm}>SIGN IN</div>
       </form>
       
