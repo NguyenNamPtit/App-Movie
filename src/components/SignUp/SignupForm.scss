@@ -123,7 +123,14 @@
             }
         }
     }
-
+    .error-be{
+        color: $hover-text-header;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    .ant-spin-container{
+        margin-top: 24px;
+    }
     .btn-signin {
         display: inline-flex;
         -webkit-box-align: center;
@@ -135,7 +142,7 @@
         -webkit-tap-highlight-color: transparent;
         outline: 0px;
         border: 0px;
-        margin: 24px 0px 0px;
+        margin: 0px 0px;
         cursor: pointer;
         user-select: none;
         vertical-align: middle;

@@ -1,49 +1,81 @@
-import React, {  useState } from 'react';
+import React, { useEffect, useState } from "react";
 //import component
-import Overlay from '../Overlay/Overlay';
-import SigninForm from '../SignIn/SigninForm';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import '../Header/Header.scss';
-import SearchIcon from '@mui/icons-material/Search';
-import LanguageIcon from '@mui/icons-material/Language';
+import Overlay from "../Overlay/Overlay";
+import SigninForm from "../SignIn/SigninForm";
+import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import "../Header/Header.scss";
+import SearchIcon from "@mui/icons-material/Search";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LanguageIcon from "@mui/icons-material/Language";
+import { useDispatch, useSelector } from "react-redux";
+import { setShowOverlay } from "../../redux/features/overLaySlide";
+import { useModal } from "../../Contexts/useModal";
+import * as UserServices from "../../services/UserServices";
+import { Button, Popover, Space } from "antd";
+import { resetUser } from "../../redux/features/userSlide";
+import toast from "react-hot-toast";
 const Header = () => {
   //show login
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showOverlay, setshowOverlay] = useState(false);
-  
-  const toggleLoginForm = () => {
-    const body = document.querySelector('body');
-    setShowLoginForm(!showLoginForm);
-    if (!showLoginForm) {
-      body.style.overflow = 'hidden';
-    } else {
-      body.style.overflow = 'auto';
-    }
-    setshowOverlay(!showOverlay);
 
+  const { modalSigninVisible, setModalSigninVisible } = useModal();
+  const { modalSignupVisible, setModalSignupVisible } = useModal();
+  const dispatch = useDispatch();
+  const { showOverlay } = useSelector((state) => state.overlay);
+  const [username, setuserName] = useState("");
+  const user = useSelector((state) => state.user);
+  console.log("user", user);
+
+  useEffect(() => {
+    setuserName(user?.name);
+  }, [user?.name]);
+
+  const toggleLoginForm = () => {
+    const body = document.querySelector("body");
+    setModalSigninVisible(!modalSigninVisible);
+
+    if (!modalSigninVisible) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+    dispatch(setShowOverlay(!showOverlay));
   };
 
   const handleOverlayClick = () => {
-    setShowLoginForm(false);
-    document.querySelector('body').style.overflow = 'auto';
-    setshowOverlay(false);
+    setModalSigninVisible(false);
+    setModalSignupVisible(false);
+    document.querySelector("body").style.overflow = "auto";
+
+    dispatch(setShowOverlay(!showOverlay));
   };
-  
+  const handleLogout = async () => {
+    await UserServices.logoutUser();
+    dispatch(resetUser());
+    localStorage.removeItem("access_token");
+    toast.success("Logout in successfully");
+  };
+  //
+  const content = (
+    <div className="header-info-user">
+      <Link to="profile-user">information</Link>
+      <p onClick={handleLogout}>logout</p>
+    </div>
+  );
   return (
-    <div   className='header-main'>
-      <Container className='custom-container'>
+    <div className="header-main">
+      <Container className="custom-container">
         <Row>
           <Col>
-            <div className='menu-wrap'>
-              <div className='menu-nav show'>
-                <div className='logo-header'>
-                  <Link to=''>
-                    <img src='../../public/image/logo-header.png' />
+            <div className="menu-wrap">
+              <div className="menu-nav show">
+                <div className="logo-header">
+                  <Link to="">
+                    <img src="../../public/image/logo-header.png" />
                   </Link>
                 </div>
-                <div className='main-menu'>
-                  <ul className='navigation'>
+                <div className="main-menu">
+                  <ul className="navigation">
                     <li>
                       <Link to="/">Home</Link>
                     </li>
@@ -61,19 +93,19 @@ const Header = () => {
                     </li>
                   </ul>
                 </div>
-                <div className='action-menu'>
+                <div className="action-menu">
                   <ul>
-                    <li className='header-search'>
-                        <Link to='/'>
-                          <SearchIcon/>
-                        </Link>
+                    <li className="header-search">
+                      <Link to="/">
+                        <SearchIcon />
+                      </Link>
                     </li>
-                    <li className='header-lang'>
-                      <form action='/#'>
-                        <div className='icon'>
-                          <LanguageIcon/>
+                    <li className="header-lang">
+                      <form action="/#">
+                        <div className="icon">
+                          <LanguageIcon />
                         </div>
-                        <select className='lang-dropdown'>
+                        <select className="lang-dropdown">
                           <option value="true">En</option>
                           <option value="true">Au</option>
                           <option value="true">Ar</option>
@@ -81,21 +113,34 @@ const Header = () => {
                         </select>
                       </form>
                     </li>
-                    <li className='header-btn' >
-                      <Link onClick={toggleLoginForm}>SIGN IN</Link>
-                      {showLoginForm && <SigninForm/>}
-                      {showOverlay && <Overlay onClick={handleOverlayClick}/>}
-                    </li>
+                    {user?.access_token ? (
+                      <>
+                        <div className="user-account">
+                          <Popover content={content} trigger="click">
+                            <AccountCircleIcon />
+                          </Popover>{" "}
+                          {username?.length ? username : user?.name}
+                        </div>
+                      </>
+                    ) : (
+                      <li className="header-btn">
+                        <Link to="#" onClick={toggleLoginForm}>
+                          SIGN IN
+                        </Link>
+                      </li>
+                    )}
+
+                    {modalSigninVisible && <SigninForm />}
+                    {showOverlay && <Overlay onClick={handleOverlayClick} />}
                   </ul>
                 </div>
               </div>
             </div>
           </Col>
-
         </Row>
       </Container>
     </div>
   );
-}
+};
 
 export default Header;

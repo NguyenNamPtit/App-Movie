@@ -1,327 +1,205 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import '../upcommingmovie/UpcommingMovie.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import { Link } from 'react-router-dom';
-const UpcommingMovie = () => {
-    return (
-        <div className='main-movie'>
-            <Container className='custom-main-movie'>
-                <Row>
-                    <Col xs={6}>
-                        <div className='title-section'>
-                            <h1>Upcoming Movies</h1>
-                        </div>
-                    </Col>
-                </Row>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={4}
-                    className='swiper-slide'
-                >
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import "../upcommingmovie/UpcommingMovie.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { Link } from "react-router-dom";
+import CircularProgressWithLabel from "../../../components/CircularProgressWithLabel/CircularProgressWithLabel";
+const UpcommingMovie = (props) => {
+  const { films } = props;
+  return (
+    <div className="main-movie">
+      <Container className="custom-main-movie">
+        <Row>
+          <Col xs={6}>
+            <div className="title-section">
+              <h1>Upcoming Movies</h1>
+            </div>
+          </Col>
+        </Row>
+        <Swiper spaceBetween={50} slidesPerView={4} className="swiper-slide">
+          {films?.data?.map((films) => {
+            return (
+              <SwiperSlide key={films?._id}>
+                <Link to="">
+                  <div className="movie-item">
+                    <div className="background-color-movie"></div>
+                    <button className="btn-movie-item">
+                      <span>
+                        <PlayArrowIcon />
+                      </span>
+                    </button>
+                    <div className="info-movie-item">
+                      <div className="box-info-item">
+                        <CircularProgressWithLabel value={films?.rating} />
+                        <p>{films?.date}</p>
+                        <p>{films?.title}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
 
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    
-
-                </Swiper>
-                <Swiper
-                    spaceBetween={50}
-                    slidesPerView={4}
-                    className='swiper-slide'
-                >
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Link to=''>
-                            <div className='movie-item'>
-                                <div className='background-color-movie'></div>
-                                <button className='btn-movie-item'>
-                                    <span><PlayArrowIcon /></span>
-
-                                </button>
-                                <div className='info-movie-item'>
-                                    <div className='box-info-item'>
-                                        <div></div>                                       
-                                        <p>2023</p>
-                                        <p>Elemental</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </SwiperSlide>
-                    
-
-                </Swiper>
-            </Container>
-        </div>
-    );
-}
+        {/* <Swiper spaceBetween={50} slidesPerView={4} className="swiper-slide">
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link to="">
+              <div className="movie-item">
+                <div className="background-color-movie"></div>
+                <button className="btn-movie-item">
+                  <span>
+                    <PlayArrowIcon />
+                  </span>
+                </button>
+                <div className="info-movie-item">
+                  <div className="box-info-item">
+                    <div></div>
+                    <p>2023</p>
+                    <p>Elemental</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </SwiperSlide>
+        </Swiper> */}
+      </Container>
+    </div>
+  );
+};
 
 export default UpcommingMovie;

@@ -159,3 +159,43 @@
         }
     }
 }
+.user-account{
+    margin-top: 2.5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;       
+    margin-left: 10px;
+    cursor: pointer;
+    svg{
+        color: $hover-text-header;
+    }
+}
+
+.header-info-user{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #fff;
+    p{
+        margin-bottom: 0px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        &:hover{
+            color: #e4d804;
+        }
+    }
+    p:hover {
+        color: #e4d804;
+        
+    }
+}
+.ant-popover .ant-popover-inner{
+    background: transparent;
+    border: 2px solid #e4d804;
+    box-shadow: 0 0 10px #e4d804 inset, 0 0 10px 4px #e4d804;
+    border-radius: 20px;
+}

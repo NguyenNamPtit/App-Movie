@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Paper, Box, LinearProgress, Toolbar } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "../LoadingGlobal/GlobalLoading.scss"
 const GlobalLoading = () => {
-  const { globalLoading } = useSelector((state) => state.globalLoading);
+  const dispatch = useDispatch();
+  const { globalLoading } = useSelector((state) => state.globalLoading);  
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,36 +18,10 @@ const GlobalLoading = () => {
         setIsLoading(false);
       }, 1000);
 
-    }
+    } 
   }, [globalLoading]);
 
   return (
-    // <div className="loading-overlay" >
-    //   <Paper sx={{
-        
-    //     opacity: isLoading ? 1 : 0,
-    //     pointerEvents: "none",
-    //     transition: "all .3s ease",
-    //     position: "fixed",
-    //     width: "100vw",
-    //     height: "100vh",
-    //     zIndex: 999
-    //   }}>
-    //     <Toolbar />
-    //     <LinearProgress color="inherit" />
-    //     <Box sx={{
-    //       position: "absolute",
-    //       top: "50%",
-    //       left: "50%",
-    //       transform: "translate(-50%, -50%)"
-    //     }}>
-    //       <p style={{ fontWeight: 700, fontSize: '1.7rem', color:'white' }}>
-    //         Mov<span style={{ color: 'yellow' }}>flx</span>
-    //       </p>
-
-    //     </Box>
-    //   </Paper>
-    // </div>
     <Box
       className="loading-container"
       sx={{
